@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\LinkEntityRepository")
@@ -18,12 +20,15 @@ class LinkEntity
 
     /**
      * @ORM\Column(type="string", length=255, nullable=false)
+     * @Assert\Url()
      */
+
     private $url;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=false)
      */
+
     private $label;
 
     /**
